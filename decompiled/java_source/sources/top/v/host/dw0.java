@@ -1,0 +1,29 @@
+package top.v.host;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.view.View;
+
+/* JADX INFO: compiled from: r8-map-id-ca9c6e32ee4a91300b3b9837035745386a74e16b8439c7e43f35f384c6555f4f */
+/* JADX INFO: loaded from: classes.dex */
+public final class dw0 extends View.BaseSavedState {
+    public static final Parcelable.Creator<dw0> CREATOR = new q2(18);
+    public int l;
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        String[] strArr = nc1.l;
+        sb.append(nc1.q(-2311057888857101L, strArr));
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(nc1.q(-2311199622777869L, strArr));
+        sb.append(this.l);
+        sb.append(nc1.q(-2311272637221901L, strArr));
+        return sb.toString();
+    }
+
+    @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        super.writeToParcel(parcel, i);
+        parcel.writeInt(this.l);
+    }
+}

@@ -1,0 +1,13 @@
+package top.v.host;
+
+/* JADX INFO: compiled from: r8-map-id-ca9c6e32ee4a91300b3b9837035745386a74e16b8439c7e43f35f384c6555f4f */
+/* JADX INFO: loaded from: classes.dex */
+public abstract class wd0 extends xd0 {
+    public static final /* synthetic */ int f = 0;
+
+    static {
+        nc1.p(-1744972609309709L);
+        nc1.p(-1745101458328589L);
+        nc1.p(-1745200242576397L);
+    }
+}

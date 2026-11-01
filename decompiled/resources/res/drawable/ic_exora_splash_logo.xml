@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:height="288.0dp" android:width="288.0dp">
+        <shape>
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item android:gravity="center" android:height="176.0dp" android:width="176.0dp">
+        <bitmap android:gravity="fill" android:src="@drawable/ic_exora_logo" />
+    </item>
+</layer-list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eightbitlab.com.blurview.BlurView android:layout_gravity="center" android:id="@id/dialogBlurView" android:background="@drawable/bg_believe_modal_loading" android:layout_width="295.0dp" android:layout_height="wrap_content" app:blurOverlayColor="#00000000"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="24.0dp" android:paddingTop="28.0dp" android:paddingRight="24.0dp" android:paddingBottom="28.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="24.0dp" android:paddingVertical="28.0dp">
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/dialogAlertTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Notice" android:fontFamily="@font/roboto" />
+        <TextView android:textSize="13.5sp" android:textColor="@color/cyber_cyan_muted" android:gravity="center" android:id="@id/dialogAlertMessage" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="Message details" android:lineSpacingExtra="3.0dp" android:fontFamily="@font/roboto" />
+        <androidx.appcompat.widget.AppCompatButton android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/btnAlertPositive" android:background="@drawable/bg_cyber_btn_login" android:layout_width="match_parent" android:layout_height="48.0dp" android:layout_marginTop="24.0dp" android:text="OK" android:textAllCaps="true" android:fontFamily="@font/roboto" android:letterSpacing="0.04" />
+    </LinearLayout>
+</eightbitlab.com.blurview.BlurView>

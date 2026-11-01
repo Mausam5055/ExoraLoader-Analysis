@@ -1,0 +1,339 @@
+package top.v.host;
+
+import android.content.pm.PackageParser;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+
+/* JADX INFO: compiled from: r8-map-id-ca9c6e32ee4a91300b3b9837035745386a74e16b8439c7e43f35f384c6555f4f */
+/* JADX INFO: loaded from: classes.dex */
+public final class ln1 extends tl1 {
+    public final /* synthetic */ int w;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ln1(int i) {
+        super(16);
+        this.w = i;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:107:0x0064 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:20:0x004a  */
+    /* JADX WARN: Code duplicated, block: B:24:0x0057  */
+    /* JADX WARN: Code duplicated, block: B:26:0x005b A[LOOP:2: B:23:0x0055->B:26:0x005b, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:31:0x006d  */
+    /* JADX WARN: Code duplicated, block: B:44:0x009b  */
+    /* JADX WARN: Code duplicated, block: B:61:0x00dd  */
+    /* JADX WARN: Code duplicated, block: B:63:0x00f1  */
+    /* JADX WARN: Code duplicated, block: B:81:0x0067 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:84:0x0050 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:85:0x0093 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:86:0x008e A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:87:0x00d9 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:88:0x00d4 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:93:0x006b A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:97:0x0097 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:98:0x0132 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:99:0x012d A[SYNTHETIC] */
+    @Override // top.v.host.tl1
+    public final String k(byte[] bArr, int i, int i2) throws oh0 {
+        int i3;
+        byte b;
+        int i4;
+        byte b2;
+        byte b3;
+        byte b4;
+        switch (this.w) {
+            case 0:
+                if ((i | i2 | ((bArr.length - i) - i2)) < 0) {
+                    throw new ArrayIndexOutOfBoundsException(String.format(nc1.q(-2436930495400973L, nc1.l), Integer.valueOf(bArr.length), Integer.valueOf(i), Integer.valueOf(i2)));
+                }
+                int i5 = i + i2;
+                char[] cArr = new char[i2];
+                int i6 = 0;
+                while (i < i5) {
+                    byte b5 = bArr[i];
+                    if (b5 < 0) {
+                        while (i < i5) {
+                            i3 = i + 1;
+                            b = bArr[i];
+                            if (b < 0) {
+                                i4 = i6 + 1;
+                                cArr[i6] = (char) b;
+                                while (i3 < i5) {
+                                    b2 = bArr[i3];
+                                    if (b2 >= 0) {
+                                        i3++;
+                                        cArr[i4] = (char) b2;
+                                        i4++;
+                                    } else {
+                                        i6 = i4;
+                                        i = i3;
+                                    }
+                                }
+                                i6 = i4;
+                                i = i3;
+                            } else if (b < -32) {
+                                if (i3 < i5) {
+                                    throw oh0.b();
+                                }
+                                i += 2;
+                                byte b6 = bArr[i3];
+                                int i7 = i6 + 1;
+                                if (b >= -62 || nc1.u(b6)) {
+                                    throw oh0.b();
+                                }
+                                cArr[i6] = (char) ((b6 & 63) | ((b & 31) << 6));
+                                i6 = i7;
+                            } else {
+                                if (b >= -16) {
+                                    if (i3 < i5 - 2) {
+                                        throw oh0.b();
+                                    }
+                                    b4 = bArr[i3];
+                                    int i8 = i + 3;
+                                    byte b7 = bArr[i + 2];
+                                    i += 4;
+                                    byte b8 = bArr[i8];
+                                    int i9 = i6 + 1;
+                                    if (!nc1.u(b4)) {
+                                        if ((((b4 + 112) + (b << 28)) >> 30) != 0 && !nc1.u(b7) && !nc1.u(b8)) {
+                                            int i10 = ((b4 & 63) << 12) | ((b & 7) << 18) | ((b7 & 63) << 6) | (b8 & 63);
+                                            cArr[i6] = (char) ((i10 >>> 10) + 55232);
+                                            cArr[i9] = (char) ((i10 & 1023) + 56320);
+                                            i6 += 2;
+                                        }
+                                    }
+                                    throw oh0.b();
+                                }
+                                if (i3 < i5 - 1) {
+                                    throw oh0.b();
+                                }
+                                int i11 = i + 2;
+                                b3 = bArr[i3];
+                                i += 3;
+                                byte b9 = bArr[i11];
+                                int i12 = i6 + 1;
+                                if (!nc1.u(b3) || ((b == -32 && b3 < -96) || ((b == -19 && b3 >= -96) || nc1.u(b9)))) {
+                                    throw oh0.b();
+                                }
+                                cArr[i6] = (char) (((b3 & 63) << 6) | ((b & 15) << 12) | (b9 & 63));
+                                i6 = i12;
+                            }
+                        }
+                        return new String(cArr, 0, i6);
+                    }
+                    i++;
+                    cArr[i6] = (char) b5;
+                    i6++;
+                }
+                while (i < i5) {
+                    i3 = i + 1;
+                    b = bArr[i];
+                    if (b < 0) {
+                        if (b < -32) {
+                            if (i3 < i5) {
+                                throw oh0.b();
+                            }
+                            i += 2;
+                            byte b10 = bArr[i3];
+                            int i13 = i6 + 1;
+                            if (b >= -62) {
+                            }
+                            throw oh0.b();
+                        }
+                        if (b >= -16) {
+                            if (i3 < i5 - 1) {
+                                throw oh0.b();
+                            }
+                            int i14 = i + 2;
+                            b3 = bArr[i3];
+                            i += 3;
+                            byte b11 = bArr[i14];
+                            int i15 = i6 + 1;
+                            if (nc1.u(b3)) {
+                            }
+                            throw oh0.b();
+                        }
+                        if (i3 < i5 - 2) {
+                            throw oh0.b();
+                        }
+                        b4 = bArr[i3];
+                        int i16 = i + 3;
+                        byte b12 = bArr[i + 2];
+                        i += 4;
+                        byte b13 = bArr[i16];
+                        int i17 = i6 + 1;
+                        if (!nc1.u(b4)) {
+                            if ((((b4 + 112) + (b << 28)) >> 30) != 0) {
+                            }
+                        }
+                        throw oh0.b();
+                    }
+                    i4 = i6 + 1;
+                    cArr[i6] = (char) b;
+                    while (i3 < i5) {
+                        b2 = bArr[i3];
+                        if (b2 >= 0) {
+                            i3++;
+                            cArr[i4] = (char) b2;
+                            i4++;
+                        } else {
+                            i6 = i4;
+                            i = i3;
+                        }
+                    }
+                    i6 = i4;
+                    i = i3;
+                }
+                return new String(cArr, 0, i6);
+            default:
+                Charset charset = eh0.a;
+                String str = new String(bArr, i, i2, charset);
+                if (str.indexOf(65533) >= 0 && !Arrays.equals(str.getBytes(charset), Arrays.copyOfRange(bArr, i, i2 + i))) {
+                    throw oh0.b();
+                }
+                return str;
+        }
+    }
+
+    @Override // top.v.host.tl1
+    public final int m(String str, byte[] bArr, int i, int i2) {
+        int i3;
+        int i4;
+        char cCharAt;
+        long j;
+        long j2;
+        int i5;
+        char cCharAt2;
+        switch (this.w) {
+            case 0:
+                int length = str.length();
+                int i6 = i2 + i;
+                int i7 = 0;
+                while (i7 < length && (i4 = i7 + i) < i6 && (cCharAt = str.charAt(i7)) < 128) {
+                    bArr[i4] = (byte) cCharAt;
+                    i7++;
+                }
+                if (i7 == length) {
+                    return i + length;
+                }
+                int i8 = i + i7;
+                while (i7 < length) {
+                    char cCharAt3 = str.charAt(i7);
+                    if (cCharAt3 < 128 && i8 < i6) {
+                        bArr[i8] = (byte) cCharAt3;
+                        i8++;
+                    } else if (cCharAt3 < 2048 && i8 <= i6 - 2) {
+                        int i9 = i8 + 1;
+                        bArr[i8] = (byte) ((cCharAt3 >>> 6) | 960);
+                        i8 += 2;
+                        bArr[i9] = (byte) ((cCharAt3 & '?') | PackageParser.PARSE_IS_PRIVILEGED);
+                    } else {
+                        if ((cCharAt3 >= 55296 && 57343 >= cCharAt3) || i8 > i6 - 3) {
+                            if (i8 > i6 - 4) {
+                                if (55296 <= cCharAt3 && cCharAt3 <= 57343 && ((i3 = i7 + 1) == str.length() || !Character.isSurrogatePair(cCharAt3, str.charAt(i3)))) {
+                                    throw new mn1(i7, length);
+                                }
+                                StringBuilder sb = new StringBuilder();
+                                String[] strArr = nc1.l;
+                                sb.append(nc1.q(-2437085114223629L, strArr));
+                                sb.append(cCharAt3);
+                                throw new ArrayIndexOutOfBoundsException(mr.h(sb, nc1.q(-2437153833700365L, strArr), i8));
+                            }
+                            int i10 = i7 + 1;
+                            if (i10 != str.length()) {
+                                char cCharAt4 = str.charAt(i10);
+                                if (Character.isSurrogatePair(cCharAt3, cCharAt4)) {
+                                    int codePoint = Character.toCodePoint(cCharAt3, cCharAt4);
+                                    bArr[i8] = (byte) ((codePoint >>> 18) | 240);
+                                    bArr[i8 + 1] = (byte) (((codePoint >>> 12) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
+                                    int i11 = i8 + 3;
+                                    bArr[i8 + 2] = (byte) (((codePoint >>> 6) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
+                                    i8 += 4;
+                                    bArr[i11] = (byte) ((codePoint & 63) | PackageParser.PARSE_IS_PRIVILEGED);
+                                    i7 = i10;
+                                } else {
+                                    i7 = i10;
+                                }
+                            }
+                            throw new mn1(i7 - 1, length);
+                        }
+                        bArr[i8] = (byte) ((cCharAt3 >>> '\f') | 480);
+                        int i12 = i8 + 2;
+                        bArr[i8 + 1] = (byte) (((cCharAt3 >>> 6) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
+                        i8 += 3;
+                        bArr[i12] = (byte) ((cCharAt3 & '?') | PackageParser.PARSE_IS_PRIVILEGED);
+                    }
+                    i7++;
+                }
+                return i8;
+            default:
+                String[] strArr2 = nc1.l;
+                long j3 = i;
+                long j4 = ((long) i2) + j3;
+                int length2 = str.length();
+                if (length2 > i2 || bArr.length - i2 < i) {
+                    throw new ArrayIndexOutOfBoundsException(nc1.q(-2437810963696653L, strArr2) + str.charAt(length2 - 1) + nc1.q(-2437879683173389L, strArr2) + (i + i2));
+                }
+                int i13 = 0;
+                while (true) {
+                    j = 1;
+                    if (i13 < length2 && (cCharAt2 = str.charAt(i13)) < 128) {
+                        an1.j(bArr, j3, (byte) cCharAt2);
+                        i13++;
+                        j3 = 1 + j3;
+                    }
+                }
+                if (i13 != length2) {
+                    while (i13 < length2) {
+                        char cCharAt5 = str.charAt(i13);
+                        if (cCharAt5 < 128 && j3 < j4) {
+                            an1.j(bArr, j3, (byte) cCharAt5);
+                            j2 = j;
+                            j3 += j;
+                        } else if (cCharAt5 >= 2048 || j3 > j4 - 2) {
+                            j2 = j;
+                            if ((cCharAt5 >= 55296 && 57343 >= cCharAt5) || j3 > j4 - 3) {
+                                if (j3 > j4 - 4) {
+                                    if (55296 <= cCharAt5 && cCharAt5 <= 57343 && ((i5 = i13 + 1) == length2 || !Character.isSurrogatePair(cCharAt5, str.charAt(i5)))) {
+                                        throw new mn1(i13, length2);
+                                    }
+                                    throw new ArrayIndexOutOfBoundsException(nc1.q(-2437926927813645L, strArr2) + cCharAt5 + nc1.q(-2437995647290381L, strArr2) + j3);
+                                }
+                                int i14 = i13 + 1;
+                                if (i14 != length2) {
+                                    char cCharAt6 = str.charAt(i14);
+                                    if (Character.isSurrogatePair(cCharAt5, cCharAt6)) {
+                                        int codePoint2 = Character.toCodePoint(cCharAt5, cCharAt6);
+                                        an1.j(bArr, j3, (byte) ((codePoint2 >>> 18) | 240));
+                                        an1.j(bArr, j3 + j2, (byte) (((codePoint2 >>> 12) & 63) | PackageParser.PARSE_IS_PRIVILEGED));
+                                        long j5 = j3 + 3;
+                                        an1.j(bArr, j3 + 2, (byte) (((codePoint2 >>> 6) & 63) | PackageParser.PARSE_IS_PRIVILEGED));
+                                        j3 += 4;
+                                        an1.j(bArr, j5, (byte) ((codePoint2 & 63) | PackageParser.PARSE_IS_PRIVILEGED));
+                                        i13 = i14;
+                                    } else {
+                                        i13 = i14;
+                                    }
+                                }
+                                throw new mn1(i13 - 1, length2);
+                            }
+                            an1.j(bArr, j3, (byte) ((cCharAt5 >>> '\f') | 480));
+                            long j6 = j3 + 2;
+                            an1.j(bArr, j3 + j2, (byte) (((cCharAt5 >>> 6) & 63) | PackageParser.PARSE_IS_PRIVILEGED));
+                            j3 += 3;
+                            an1.j(bArr, j6, (byte) ((cCharAt5 & '?') | PackageParser.PARSE_IS_PRIVILEGED));
+                        } else {
+                            j2 = j;
+                            long j7 = j3 + j2;
+                            an1.j(bArr, j3, (byte) ((cCharAt5 >>> 6) | 960));
+                            j3 += 2;
+                            an1.j(bArr, j7, (byte) ((cCharAt5 & '?') | PackageParser.PARSE_IS_PRIVILEGED));
+                        }
+                        i13++;
+                        j = j2;
+                    }
+                }
+                return (int) j3;
+        }
+    }
+}

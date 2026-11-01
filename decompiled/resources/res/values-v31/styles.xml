@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CheatUIDev.Launch" parent="@style/Theme.CheatUIDev.Base">
+        <item name="android:windowBackground">@color/cyber_bg_dark</item>
+        <item name="android:windowSplashScreenBackground">@color/cyber_bg_dark</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_exora_splash_logo</item>
+    </style>
+</resources>

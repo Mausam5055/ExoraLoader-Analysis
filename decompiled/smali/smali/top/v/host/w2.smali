@@ -1,0 +1,17 @@
+.class public interface abstract Ltop/v/host/w2;
+.super Ljava/lang/Object;
+.source "r8-map-id-ca9c6e32ee4a91300b3b9837035745386a74e16b8439c7e43f35f384c6555f4f"
+
+
+# virtual methods
+.method public abstract a(Ltop/v/host/x2;Landroid/view/Menu;)Z
+.end method
+
+.method public abstract e(Ltop/v/host/x2;Landroid/view/Menu;)Z
+.end method
+
+.method public abstract h(Ltop/v/host/x2;Landroid/view/MenuItem;)Z
+.end method
+
+.method public abstract j(Ltop/v/host/x2;)V
+.end method

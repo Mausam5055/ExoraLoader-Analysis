@@ -1,0 +1,58 @@
+package BelieveEsp.android.location;
+
+import android.util.ArrayMap;
+import java.lang.reflect.Field;
+import top.niunaijun.blackreflection.annotation.BClassNameNotProcess;
+import top.niunaijun.blackreflection.annotation.BFieldCheckNotProcess;
+import top.niunaijun.blackreflection.annotation.BFieldNotProcess;
+import top.niunaijun.blackreflection.annotation.BFieldSetNotProcess;
+
+/* JADX INFO: compiled from: r8-map-id-ca9c6e32ee4a91300b3b9837035745386a74e16b8439c7e43f35f384c6555f4f */
+/* JADX INFO: loaded from: classes.dex */
+@BClassNameNotProcess("android.location.LocationManager")
+public interface LocationManagerQContext {
+    @BFieldCheckNotProcess
+    Field _check_mGnssNmeaListeners();
+
+    @BFieldCheckNotProcess
+    Field _check_mGnssStatusListeners();
+
+    @BFieldCheckNotProcess
+    Field _check_mGpsNmeaListeners();
+
+    @BFieldCheckNotProcess
+    Field _check_mGpsStatusListeners();
+
+    @BFieldCheckNotProcess
+    Field _check_mListeners();
+
+    @BFieldSetNotProcess
+    void _set_mGnssNmeaListeners(Object obj);
+
+    @BFieldSetNotProcess
+    void _set_mGnssStatusListeners(Object obj);
+
+    @BFieldSetNotProcess
+    void _set_mGpsNmeaListeners(Object obj);
+
+    @BFieldSetNotProcess
+    void _set_mGpsStatusListeners(Object obj);
+
+    @BFieldSetNotProcess
+    void _set_mListeners(Object obj);
+
+    @BFieldNotProcess
+    ArrayMap mGnssNmeaListeners();
+
+    @BFieldNotProcess
+    ArrayMap mGnssStatusListeners();
+
+    @BFieldNotProcess
+    ArrayMap mGpsNmeaListeners();
+
+    @BFieldNotProcess
+    ArrayMap mGpsStatusListeners();
+
+    @BFieldNotProcess
+    ArrayMap mListeners();
+}
